@@ -30,16 +30,32 @@ Descreva os objetivos do seu projeto e como ele funciona.
 Adicione 3 ou mais screenshots do projeto em funcionamento.
 
 ## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+**Linguagem**: Javascript<br>
+**Framework**: ReactJS<br>
+
+Com o **[Node.JS](https://nodejs.org)** instalado, execute os comandos dentro da pasta do projeto:
+
+```bash
+npm install
+npm run dev
+# Tecle Control + C para encerrar
+```
+
+Ou se preferir, com o **[Docker](https://www.docker.com/)** instalado, execute os comandos dentro da pasta do projeto:
+
+```bash
+docker build -t motocycle-tourism-stop .
+docker run -d -p 5173:5173 --name motocycle-tourism-stop motocycle-tourism-stop
+```
+
+Utilize o comando abaixo para encerrar a utilização do Docker:
+
+```bash
+docker stop motocycle-tourism-stop
+```
 
 ## Uso 
 Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
 
 ## Outros 
 Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
-
-
-
-
