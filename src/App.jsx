@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import "./assets/styles.css";
+import { Icon } from '@iconify/react';
 
 function App() {
-  const [gasStations, setGasStations] = useState([
-    { name: "teste", kilometer: "1" },
-  ]);
+  const [gasStations, setGasStations] = useState([]);
   const [newGasStation, setNewGasStation] = useState({
     name: "",
     kilometer: "",
@@ -14,12 +13,18 @@ function App() {
   const handleSubmit = e => {
     e.preventDefault();
     setGasStations([...gasStations, newGasStation]);
-    // setNewGasStation({ name: "", kilometer: "" });
   };
 
   const handleCalculate = () => {
     // TODO
+     e.preventDefault();
   };
+
+  const removeItem = index => {
+    // TODO nao sei pq n funciona
+    console.log(index)
+    // setGasStations([...gasStations.splice(index)])
+  }
 
   return (
     <div className="main">
@@ -35,6 +40,7 @@ function App() {
                 setNewGasStation({ ...newGasStation, name: e.target.value })
               }
               className="input"
+              required
             />
           </div>
           <div className="form-field">
@@ -50,6 +56,7 @@ function App() {
                 })
               }
               className="input"
+              required
             />
           </div>
           <button type="submit" className="button">
@@ -61,26 +68,30 @@ function App() {
           <div className="header">
             <span>Name</span>
             <span>position</span>
+            <span>actions</span>
           </div>
           <ul>
             {gasStations.map((station, index) => (
               <li key={index}>
                 <span>{station.name}</span>
                 <span>KM-{station.kilometer}</span>
+                <Icon className="remove" icon="mdi:trash-can-outline" onClick={removeItem(index)} />
               </li>
             ))}
           </ul>
         </div>
-        <form className="range-form">
+        <form className="range-form" onSubmit={handleCalculate}>
           <div className="form-field">
             <label>Range:</label>
             <input
+              type="number"
               value={range}
               onChange={e => setRange(e.target.value)}
               className="input"
+              required
             />
           </div>
-          <button className="button" onClick={handleCalculate}>
+          <button className="button" type="submit">
             Calculate
           </button>
         </form>
