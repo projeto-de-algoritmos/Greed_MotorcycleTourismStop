@@ -1,0 +1,123 @@
+@font-face {
+ font-family: "Sofia";
+ src: url("./fonts/SofiaSans-VariableFont_wght.ttf") format("truetype");
+}
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+.main {
+ background: #383838;
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+ padding: 3rem;
+ height: 100vh;
+ width: 100vw;
+ color: #FEF3ED;
+ font-family: "Sofia";
+ text-transform: uppercase;
+}
+
+.title {
+ font-size: 3rem;
+ color: #f96464;
+ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.516);
+}
+
+.content {
+ display: flex;
+ justify-content: space-between;
+ width: 100%;
+ margin-top: 3rem;
+}
+
+.registration-form, .range-form {
+ display: flex;
+ flex-direction: column;
+ align-items: flex-end;
+}
+
+.range-form {
+ align-items: flex-start;
+}
+
+.form-field {
+ display: flex;
+ flex-direction: column;
+ margin-bottom: 2rem;
+}
+
+.form-field .input {
+ background-color: transparent;
+ color: #FEF3ED;
+ border: 0.0053rem solid #FEF3ED;
+ padding: 0.5rem 1rem;
+ margin-top: 0.5rem;
+ border-radius: 5px;
+ width: 250px;
+}
+
+.form-field .input:focus {
+ outline: none
+}
+
+.form-field .input::placeholder {
+ color: #fef3ed84;
+}
+
+.button {
+  cursor: pointer;
+  background-color: transparent;
+  color: #f96464;
+  border: 0.0053rem solid #f96464;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+  width: 150px;
+  transition: 0.5s all ease;
+}
+
+.button:hover {
+ background-color: #f96464;
+ color: #FEF3ED;
+}
+
+button {
+ background-color: #b1b1b1;
+}
+
+.gas-stations-list {
+ background-color: #FEF3ED;
+ color: #383838;
+ padding: 2rem;
+ border-radius: 10px;
+}
+
+.list-title {
+ color: #fb4141;
+ text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.271);
+ margin-bottom: 2rem;
+}
+
+.gas-stations-list .header {
+ display: flex;
+ justify-content: space-between;
+ font-weight: bold;
+ color: black;
+ border-bottom: 1px solid lightgray;
+ margin-bottom: 0.75rem;
+}
+
+.gas-stations-list ul {
+ list-style: none;
+}
+
+.gas-stations-list ul li {
+ display: flex;
+ justify-content: space-between;
+ margin-bottom: 0.5rem;
+}
