@@ -10,7 +10,8 @@ export default function Register({gasStationsState}) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    setGasStations([...gasStations, newGasStation]);
+    let sortedGasStations = [...gasStations, newGasStation].sort((a, b) => parseInt(a.kilometer) - parseInt(b.kilometer))
+    setGasStations([...sortedGasStations]);
   };
 
   return (

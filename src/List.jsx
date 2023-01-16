@@ -1,7 +1,7 @@
 import "./assets/styles.css";
 import { Icon } from '@iconify/react';
 
-export default function ListForm({gasStationsState}) {
+export default function List({gasStationsState}) {
   const [gasStations, setGasStations] = gasStationsState;
 
   const removeItem = index => {
