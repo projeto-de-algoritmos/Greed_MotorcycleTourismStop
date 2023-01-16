@@ -15,15 +15,15 @@ function App() {
     setGasStations([...gasStations, newGasStation]);
   };
 
-  const handleCalculate = () => {
+  const handleCalculate = e => {
     // TODO
-     e.preventDefault();
+    e.preventDefault();
   };
 
   const removeItem = index => {
-    // TODO nao sei pq n funciona
-    console.log(index)
-    // setGasStations([...gasStations.splice(index)])
+    let newGasStationsState = gasStations;
+    newGasStationsState.splice(index, 1);
+    setGasStations([...newGasStationsState]);
   }
 
   return (
@@ -35,9 +35,11 @@ function App() {
             <label>Gas Station Name</label>
             <input
               placeholder="Posto Shell"
-              value={newGasStation.name}
               onChange={e =>
-                setNewGasStation({ ...newGasStation, name: e.target.value })
+                setNewGasStation({
+                  ...newGasStation,
+                  name: e.target.value,
+                })
               }
               className="input"
               required
@@ -47,8 +49,7 @@ function App() {
             <label>Kilometer</label>
             <input
               placeholder="10"
-              type={'number'}
-              value={newGasStation.kilometer}
+              type="number"
               onChange={e =>
                 setNewGasStation({
                   ...newGasStation,
@@ -75,7 +76,7 @@ function App() {
               <li key={index}>
                 <span>{station.name}</span>
                 <span>KM-{station.kilometer}</span>
-                <Icon className="remove" icon="mdi:trash-can-outline" onClick={removeItem(index)} />
+                <Icon className="remove" icon="mdi:trash-can-outline" onClick={() => {removeItem(index)}} />
               </li>
             ))}
           </ul>
@@ -85,8 +86,7 @@ function App() {
             <label>Range:</label>
             <input
               type="number"
-              value={range}
-              onChange={e => setRange(e.target.value)}
+              onChange={e => {setRange(e.target.value)}}
               className="input"
               required
             />
