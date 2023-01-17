@@ -122,6 +122,8 @@ button {
  display: grid;
  grid-template-columns: 1fr 1fr 0.35fr;
  margin-bottom: 0.5rem;
+ padding: 0.3rem 0.6rem;
+ border-radius: 5px;
 }
 
 .gas-stations-list ul li *:nth-child(3) {
@@ -132,4 +134,8 @@ button {
  cursor: pointer;
  color: red;
  margin-right: 1.5rem;
+}
+
+.selected {
+  background-color: rgb(210, 251, 197);
 }

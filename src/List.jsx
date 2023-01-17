@@ -7,6 +7,9 @@ export default function List({gasStationsState}) {
   const removeItem = index => {
     let newGasStationsState = gasStations;
     newGasStationsState.splice(index, 1);
+    newGasStationsState.forEach((item) => {
+      item.selected = false;
+    });
     setGasStations([...newGasStationsState]);
   }
 
@@ -21,7 +24,7 @@ export default function List({gasStationsState}) {
       <ul>
         {gasStations.map((station, index) => (
           (station.name !== "origin" && station.name !== "target") &&
-          <li key={index} id={index}>
+          <li key={index} id={index} className={station.selected ? 'selected' : ''}>
             <span>{station.name}</span>
             <span>KM-{station.kilometer}</span>
             <Icon className="remove" icon="mdi:trash-can-outline" onClick={() => {removeItem(index)}} />

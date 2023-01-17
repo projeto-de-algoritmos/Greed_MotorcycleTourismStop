@@ -7,12 +7,8 @@ import List from "./List";
 
 function App() {
   const gasStationsState = useState([
-    // { name: "p", kilometer: 100, selected: false },
-    // { name: "p", kilometer: 150, selected: false },
-    // { name: "p", kilometer: 180, selected: false },
-    // { name: "p", kilometer: 250, selected: false },
-    // { name: "p", kilometer: 290, selected: false },
-    // { name: "p", kilometer: 350, selected: false },
+    { name: "origin", kilometer: 0, selected: false },
+    { name: "target", kilometer: Infinity, selected: false },
   ]);
 
   return (

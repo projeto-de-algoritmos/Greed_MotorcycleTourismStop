@@ -14,8 +14,10 @@ export default function CalculateForm({gasStationsState}) {
     let distance = distanceRef.current;
 
     const clonedGasStations = JSON.parse(JSON.stringify(gasStations));
-    clonedGasStations.unshift({ name: "origin", kilometer: 0, selected: false })
-    clonedGasStations.push({ name: "target", kilometer: distance, selected: false })
+    clonedGasStations.forEach((item) => {
+      if (item.name === 'target') item.kilometer = distance;
+      item.selected = false;
+    });
     clonedGasStations.sort((a, b) => a.kilometer - b.kilometer);
 
     const indexes = [];
@@ -23,7 +25,7 @@ export default function CalculateForm({gasStationsState}) {
 
     for (let i = 0; i < clonedGasStations.length; i++) {
       if (clonedGasStations[i].name === 'target') {
-        console.log('cheguei')
+        alert("The stops are highlighted in the list!");
         break;
       }
 
@@ -34,13 +36,13 @@ export default function CalculateForm({gasStationsState}) {
         indexes.push(i);
 
         if (proxPosto > currentGasMileage) {
-          console.log('nao chego')
+          alert("Can't arrive at the destination! Insufficient gas mileage.");
           break;
         }
       }
     }
 
-    console.log(clonedGasStations)
+    setGasStations([...clonedGasStations])
   }
 
   return (

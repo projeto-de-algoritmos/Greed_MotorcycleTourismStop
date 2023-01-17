@@ -11,7 +11,10 @@ export default function Register({gasStationsState}) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    let sortedGasStations = [...gasStations, newGasStation].sort((a, b) => a.kilometer -b.kilometer);
+    let sortedGasStations = [...gasStations, newGasStation].sort((a, b) => a.kilometer - b.kilometer)
+    sortedGasStations.forEach((item) => {
+      item.selected = false;
+    })
     setGasStations([...sortedGasStations]);
   };
 
