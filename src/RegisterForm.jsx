@@ -5,12 +5,13 @@ export default function Register({gasStationsState}) {
   const [gasStations, setGasStations] = gasStationsState;
   const [newGasStation, setNewGasStation] = useState({
     name: "",
-    kilometer: "",
+    kilometer: 0,
+    selected: false,
   });
 
   const handleSubmit = e => {
     e.preventDefault();
-    let sortedGasStations = [...gasStations, newGasStation].sort((a, b) => parseInt(a.kilometer) - parseInt(b.kilometer))
+    let sortedGasStations = [...gasStations, newGasStation].sort((a, b) => a.kilometer -b.kilometer);
     setGasStations([...sortedGasStations]);
   };
 
@@ -38,7 +39,7 @@ export default function Register({gasStationsState}) {
           onChange={e =>
             setNewGasStation({
               ...newGasStation,
-              kilometer: e.target.value,
+              kilometer: parseInt(e.target.value),
             })
           }
           className="input"

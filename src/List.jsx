@@ -20,7 +20,8 @@ export default function List({gasStationsState}) {
       </div>
       <ul>
         {gasStations.map((station, index) => (
-          <li key={index}>
+          (station.name !== "origin" && station.name !== "target") &&
+          <li key={index} id={index}>
             <span>{station.name}</span>
             <span>KM-{station.kilometer}</span>
             <Icon className="remove" icon="mdi:trash-can-outline" onClick={() => {removeItem(index)}} />
