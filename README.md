@@ -12,6 +12,9 @@
 ## Sobre
 A partir de uma lista de postos que podem ser cadastrados, uma autonomia e qual a distância a ser percorrida, é mostrado ao usuário quais postos ele precisa parar para chegar ao seu destino.
 
+## Apresentação
+https://github.com/projeto-de-algoritmos/Greed_MotorcycleTourismStop/blob/master/video.mp4
+
 ## Screenshots
 <img src="src/assets/prints/1.png" style="height: 300px;"/></br>
 <img src="src/assets/prints/2.png" style="height: 300px;"/></br>
@@ -20,7 +23,7 @@ A partir de uma lista de postos que podem ser cadastrados, uma autonomia e qual 
 
 ## Instalação 
 **Linguagem**: Javascript<br>
-**Framework**: ReactJS<br>
+**Framework**: ReactJS (Biblioteca)<br>
 
 O projeto está disponível em: https://greed-motorcycle-tourism-stop.vercel.app/
 
